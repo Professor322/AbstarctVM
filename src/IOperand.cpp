@@ -3,28 +3,29 @@
 //
 
 #include "IOperand.h"
+#include "OperandDerived.h"
 
 const IOperand * OperandCreator::createInt8(const std::string &value) const {
-    return new Operand<int8_t, eOperandType::Int8>(value);
+    return new Operand(value, eOperandType::Int8);
 }
 
 const IOperand * OperandCreator::createInt16(const std::string &value) const {
-    return new Operand<int16_t, eOperandType::Int16>(value);
+    return new Operand(value, eOperandType::Int16);
 }
 
 const IOperand * OperandCreator::createInt32(const std::string &value) const {
-    return new Operand<int32_t, eOperandType::Int32>(value);
+    return new Operand(value, eOperandType::Int32);
 }
 
 const IOperand * OperandCreator::createFloat(const std::string &value) const {
-    return new Operand<float, eOperandType::Float>(value);
+    return new Operand(value, eOperandType::Float);
 }
 
 const IOperand * OperandCreator::createDouble(const std::string &value) const {
-    return new Operand<double, eOperandType::Double>(value);
+    return new Operand(value, eOperandType::Double);
 }
 
-IOperand const * OperandCreator::createOperand(eOperandType type, const std::string &value) const {
+IOperand const * OperandCreator::createOperand(eOperandType type, std::string const &value) const {
     static std::array<std::function<IOperand const *(const OperandCreator&, std::string const&)>, OPERAND_TYPES_NUM> mainCreator = {
             &OperandCreator::createInt8,
             &OperandCreator::createInt16,
@@ -35,5 +36,4 @@ IOperand const * OperandCreator::createOperand(eOperandType type, const std::str
 
     return mainCreator[static_cast<int>(type)](OperandCreator(), value);
 }
-
 

@@ -59,19 +59,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/vlegros/AbstarctVM
+CMAKE_SOURCE_DIR = /home/professor/SchoolProjects/AbstarctVM
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/vlegros/AbstarctVM/cmake-build-debug
+CMAKE_BINARY_DIR = /home/professor/SchoolProjects/AbstarctVM/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /Users/vlegros/AbstarctVM/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vlegros/AbstarctVM/cmake-build-debug/CMakeFiles /Users/vlegros/AbstarctVM/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles /home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vlegros/AbstarctVM/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -170,6 +170,87 @@ src/IOperand.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/IOperand.cpp.s
 .PHONY : src/IOperand.cpp.s
 
+src/OperandDerived.o: src/OperandDerived.cpp.o
+
+.PHONY : src/OperandDerived.o
+
+# target to build an object file
+src/OperandDerived.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/OperandDerived.cpp.o
+.PHONY : src/OperandDerived.cpp.o
+
+src/OperandDerived.i: src/OperandDerived.cpp.i
+
+.PHONY : src/OperandDerived.i
+
+# target to preprocess a source file
+src/OperandDerived.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/OperandDerived.cpp.i
+.PHONY : src/OperandDerived.cpp.i
+
+src/OperandDerived.s: src/OperandDerived.cpp.s
+
+.PHONY : src/OperandDerived.s
+
+# target to generate assembly for a file
+src/OperandDerived.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/OperandDerived.cpp.s
+.PHONY : src/OperandDerived.cpp.s
+
+src/Utils.o: src/Utils.cpp.o
+
+.PHONY : src/Utils.o
+
+# target to build an object file
+src/Utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/Utils.cpp.o
+.PHONY : src/Utils.cpp.o
+
+src/Utils.i: src/Utils.cpp.i
+
+.PHONY : src/Utils.i
+
+# target to preprocess a source file
+src/Utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/Utils.cpp.i
+.PHONY : src/Utils.cpp.i
+
+src/Utils.s: src/Utils.cpp.s
+
+.PHONY : src/Utils.s
+
+# target to generate assembly for a file
+src/Utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/Utils.cpp.s
+.PHONY : src/Utils.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -182,6 +263,15 @@ help:
 	@echo "... src/IOperand.o"
 	@echo "... src/IOperand.i"
 	@echo "... src/IOperand.s"
+	@echo "... src/OperandDerived.o"
+	@echo "... src/OperandDerived.i"
+	@echo "... src/OperandDerived.s"
+	@echo "... src/Utils.o"
+	@echo "... src/Utils.i"
+	@echo "... src/Utils.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

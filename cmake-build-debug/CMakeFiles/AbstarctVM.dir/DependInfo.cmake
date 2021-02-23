@@ -4,9 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/vlegros/AbstarctVM/src/IOperand.cpp" "/Users/vlegros/AbstarctVM/cmake-build-debug/CMakeFiles/AbstarctVM.dir/src/IOperand.cpp.o"
+  "/home/professor/SchoolProjects/AbstarctVM/src/IOperand.cpp" "/home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles/AbstarctVM.dir/src/IOperand.cpp.o"
+  "/home/professor/SchoolProjects/AbstarctVM/src/OperandDerived.cpp" "/home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles/AbstarctVM.dir/src/OperandDerived.cpp.o"
+  "/home/professor/SchoolProjects/AbstarctVM/src/Utils.cpp" "/home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles/AbstarctVM.dir/src/Utils.cpp.o"
+  "/home/professor/SchoolProjects/AbstarctVM/src/main.cpp" "/home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles/AbstarctVM.dir/src/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

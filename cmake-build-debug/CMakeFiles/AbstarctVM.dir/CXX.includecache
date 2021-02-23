@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/IOperand.h
+string
+-
+array
+-
+functional
+-
+utility
+-
+variant
+-
+tuple
+-
+cmath
+-
+
+/home/professor/SchoolProjects/AbstarctVM/src/main.cpp
+IOperand.h
+/home/professor/SchoolProjects/AbstarctVM/src/IOperand.h
+iostream
+-
+
