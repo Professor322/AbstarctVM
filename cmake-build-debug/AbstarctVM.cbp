@@ -84,10 +84,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/include/Engine.h">
+			<Option target="AbstarctVM"/>
+		</Unit>
+		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/include/Stack.h">
+			<Option target="AbstarctVM"/>
+		</Unit>
+		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/src/Engine.cpp">
+			<Option target="AbstarctVM"/>
+		</Unit>
 		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/src/IOperand.cpp">
 			<Option target="AbstarctVM"/>
 		</Unit>
 		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/src/OperandDerived.cpp">
+			<Option target="AbstarctVM"/>
+		</Unit>
+		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/src/Stack.cpp">
 			<Option target="AbstarctVM"/>
 		</Unit>
 		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/src/Utils.cpp">

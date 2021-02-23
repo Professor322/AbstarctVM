@@ -7,7 +7,7 @@
 Operand::Operand(const std::string &Value, const eOperandType type) : Value(Value), type(type), oc() {}
 
 [[nodiscard]] std::tuple<eOperandType, Types, Types> Operand::ops_for_arith(IOperand const &rhs) const {
-	eOperandType opType = getPrecision() < getPrecision() ? rhs.getType() : getType();
+	eOperandType opType = getPrecision() < rhs.getPrecision() ? rhs.getType() : getType();
 	return {opType, getVariant(opType, toString()), getVariant(opType, rhs.toString())};
 }
 

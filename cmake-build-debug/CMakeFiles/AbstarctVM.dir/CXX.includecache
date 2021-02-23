@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+../include/Engine.h
+OperandDerived.h
+../include/OperandDerived.h
+Stack.h
+../include/Stack.h
+vector
+-
+unordered_map
+-
+fstream
+-
+
 ../include/IOperand.h
 string
 -
@@ -22,9 +34,19 @@ tuple
 cmath
 -
 
-/home/professor/SchoolProjects/AbstarctVM/src/main.cpp
+../include/OperandDerived.h
 IOperand.h
-/home/professor/SchoolProjects/AbstarctVM/src/IOperand.h
-iostream
+../include/IOperand.h
+
+../include/Stack.h
+OperandDerived.h
 -
+memory
+-
+stack
+-
+
+/home/professor/SchoolProjects/AbstarctVM/src/Engine.cpp
+Engine.h
+/home/professor/SchoolProjects/AbstarctVM/src/Engine.h
 

@@ -1,1 +1,1 @@
-/usr/bin/g++-9  -g   CMakeFiles/AbstarctVM.dir/src/IOperand.cpp.o CMakeFiles/AbstarctVM.dir/src/main.cpp.o CMakeFiles/AbstarctVM.dir/src/Utils.cpp.o CMakeFiles/AbstarctVM.dir/src/OperandDerived.cpp.o  -o AbstarctVM 
+/usr/bin/g++-9  -g   CMakeFiles/AbstarctVM.dir/src/IOperand.cpp.o CMakeFiles/AbstarctVM.dir/src/main.cpp.o CMakeFiles/AbstarctVM.dir/src/Utils.cpp.o CMakeFiles/AbstarctVM.dir/src/OperandDerived.cpp.o CMakeFiles/AbstarctVM.dir/src/Stack.cpp.o CMakeFiles/AbstarctVM.dir/src/Engine.cpp.o  -o AbstarctVM 

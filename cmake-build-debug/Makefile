@@ -143,6 +143,33 @@ AbstarctVM/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/build
 .PHONY : AbstarctVM/fast
 
+src/Engine.o: src/Engine.cpp.o
+
+.PHONY : src/Engine.o
+
+# target to build an object file
+src/Engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/Engine.cpp.o
+.PHONY : src/Engine.cpp.o
+
+src/Engine.i: src/Engine.cpp.i
+
+.PHONY : src/Engine.i
+
+# target to preprocess a source file
+src/Engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/Engine.cpp.i
+.PHONY : src/Engine.cpp.i
+
+src/Engine.s: src/Engine.cpp.s
+
+.PHONY : src/Engine.s
+
+# target to generate assembly for a file
+src/Engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/Engine.cpp.s
+.PHONY : src/Engine.cpp.s
+
 src/IOperand.o: src/IOperand.cpp.o
 
 .PHONY : src/IOperand.o
@@ -196,6 +223,33 @@ src/OperandDerived.s: src/OperandDerived.cpp.s
 src/OperandDerived.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/OperandDerived.cpp.s
 .PHONY : src/OperandDerived.cpp.s
+
+src/Stack.o: src/Stack.cpp.o
+
+.PHONY : src/Stack.o
+
+# target to build an object file
+src/Stack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/Stack.cpp.o
+.PHONY : src/Stack.cpp.o
+
+src/Stack.i: src/Stack.cpp.i
+
+.PHONY : src/Stack.i
+
+# target to preprocess a source file
+src/Stack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/Stack.cpp.i
+.PHONY : src/Stack.cpp.i
+
+src/Stack.s: src/Stack.cpp.s
+
+.PHONY : src/Stack.s
+
+# target to generate assembly for a file
+src/Stack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/Stack.cpp.s
+.PHONY : src/Stack.cpp.s
 
 src/Utils.o: src/Utils.cpp.o
 
@@ -260,12 +314,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... AbstarctVM"
+	@echo "... src/Engine.o"
+	@echo "... src/Engine.i"
+	@echo "... src/Engine.s"
 	@echo "... src/IOperand.o"
 	@echo "... src/IOperand.i"
 	@echo "... src/IOperand.s"
 	@echo "... src/OperandDerived.o"
 	@echo "... src/OperandDerived.i"
 	@echo "... src/OperandDerived.s"
+	@echo "... src/Stack.o"
+	@echo "... src/Stack.i"
+	@echo "... src/Stack.s"
 	@echo "... src/Utils.o"
 	@echo "... src/Utils.i"
 	@echo "... src/Utils.s"
