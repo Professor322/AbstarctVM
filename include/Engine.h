@@ -7,11 +7,12 @@
 
 #include "OperandDerived.h"
 #include "Stack.h"
-#include <vector>
+#include <list>
 #include <unordered_map>
 #include <fstream>
 
 enum class eTokens {
+	INSN,
 	ADD,
 	SUB,
 	MUL,
@@ -26,9 +27,9 @@ enum class eTokens {
 	OPEN_BRACKET,
 	VALUE,
 	CLOSE_BRACKET,
-	COMMENT,
 	NEW_LINE,
 	END,
+	UNKNOWN
 };
 
 struct Token {
@@ -37,8 +38,8 @@ struct Token {
 };
 
 class Engine {
-	std::vector<Token> tokens;
-	const std::unordered_map<std::string, eTokens> dict {
+	std::list<Token> tokens;
+	const std::unordered_map<std::string, eTokens> insns {
 		{"add", eTokens::ADD},
 		{"sub", eTokens::SUB},
 		{"mul", eTokens::MUL},
@@ -50,9 +51,9 @@ class Engine {
 		{"print", eTokens::PRINT},
 		{"assert", eTokens::ASSERT},
 	};
-
+	Token getToken(std::istream& it);
 public:
-	std::vector<Token> Tokenize(std::fstream& it);
+	std::list<Token> Tokenize(std::istream& it);
 
 	void Run() {
 
