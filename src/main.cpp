@@ -9,6 +9,6 @@ int main(int argc, char** argv) {
 	Engine e;
 	std::fstream f(argv[1]);
 
-	std::list<Token> test = e.Tokenize(f);
+	std::list<std::unique_ptr<Token>> test = e.Tokenize(f);
 	return 0;
 }
