@@ -4,12 +4,11 @@
 
 #include "Engine.h"
 
-Token Engine::getToken(std::istream& fs) {
+std::unique_ptr<Token> Engine::getToken(std::istream& fs) {
 	static char LastChar = ' ';
-	//skip spaces
 
 	if (fs.eof())
-		return {eTokens::END, std::string{}};
+		return std::make_unique<BasicToken>(eTokens::END);
 
 
 	while (!fs.eof() && isspace(LastChar) && LastChar != '\n')
@@ -22,11 +21,11 @@ Token Engine::getToken(std::istream& fs) {
 
 	if (LastChar == '\n') {
 		fs.get(LastChar);
-		return {eTokens::NEW_LINE, std::string{}};
+		return std::make_unique<BasicToken>(eTokens::NEW_LINE);
 	}
 	if (LastChar == '(') {
 		fs.get(LastChar);
-		return {eTokens::OPEN_BRACKET, std::string{}};
+		return std::make_unique<BasicToken>(eTokens::OPEN_BRACKET);
 	}
 	if (isdigit(LastChar)) {
 		std::string Value;
@@ -34,12 +33,12 @@ Token Engine::getToken(std::istream& fs) {
 			Value += LastChar;
 			fs.get(LastChar);
 		}
-		return {eTokens::VALUE, std::move(Value)};
+		return std::make_unique<ValueToken>(eTokens::VALUE, Value);
 
 	}
 	if (LastChar == ')') {
 		fs.get(LastChar);
-		return {eTokens::CLOSE_BRACKET, std::string{}};
+		return std::make_unique<BasicToken>(eTokens::CLOSE_BRACKET);
 	}
 
 
@@ -52,22 +51,21 @@ Token Engine::getToken(std::istream& fs) {
 		}
 		///if next symbol isspace that means we have parse an instruction
 		if (fs.eof() || isspace(LastChar))
-			return {eTokens::INSN, std::move(Identifier)};
+			return std::make_unique<InsnToken>(eTokens::INSN, Identifier);
 		///that means we have tokenized VALUE TYPE
 		if (LastChar == '(')
-			return {eTokens::VALUE_TYPE, std::move(Identifier)};
+			return std::make_unique<TypeToken>(eTokens::VALUE_TYPE, Identifier);
 
 	}
 
 	fs.get(LastChar);
-	return {eTokens::UNKNOWN, std::string{}};
+	return std::make_unique<BasicToken>(eTokens::UNKNOWN, LastChar);
 }
 
-std::list<Token> Engine::Tokenize(std::istream &it) {
-	do {
+std::list<std::unique_ptr<Token>> Engine::Tokenize(std::istream &it) {
+	do
 		tokens.push_back(getToken(it));
-	}
-	while (tokens.back().token != eTokens::END);
+	while (tokens.back()->getToken() != eTokens::END);
 
 	return tokens;
 }
