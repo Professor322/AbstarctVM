@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/professor/SchoolProjects/AbstarctVM/src/IOperand.cpp" "/home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles/AbstarctVM.dir/src/IOperand.cpp.o"
   "/home/professor/SchoolProjects/AbstarctVM/src/OperandDerived.cpp" "/home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles/AbstarctVM.dir/src/OperandDerived.cpp.o"
   "/home/professor/SchoolProjects/AbstarctVM/src/Stack.cpp" "/home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles/AbstarctVM.dir/src/Stack.cpp.o"
+  "/home/professor/SchoolProjects/AbstarctVM/src/Token.cpp" "/home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles/AbstarctVM.dir/src/Token.cpp.o"
   "/home/professor/SchoolProjects/AbstarctVM/src/Utils.cpp" "/home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles/AbstarctVM.dir/src/Utils.cpp.o"
   "/home/professor/SchoolProjects/AbstarctVM/src/main.cpp" "/home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles/AbstarctVM.dir/src/main.cpp.o"
   )

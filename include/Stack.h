@@ -9,10 +9,20 @@
 #include <memory>
 #include <stack>
 
-class MyStack {
+class Stack {
 private:
-	std::stack<std::shared_ptr<const IOperand*>> st;
+	std::stack<std::shared_ptr<const IOperand>> st;
 public:
+	void Add();
+	void Sub();
+	void Mul();
+	void Div();
+	void Mod();
+	void Push(std::shared_ptr<const IOperand> op);
+	void Pop();
+	void Dump();
+	void Print();
+	void Assert(std::shared_ptr<const IOperand> op);
 };
 
 

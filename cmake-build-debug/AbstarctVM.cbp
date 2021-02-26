@@ -90,6 +90,9 @@
 		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/include/Stack.h">
 			<Option target="AbstarctVM"/>
 		</Unit>
+		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/include/Token.h">
+			<Option target="AbstarctVM"/>
+		</Unit>
 		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/src/Engine.cpp">
 			<Option target="AbstarctVM"/>
 		</Unit>
@@ -100,6 +103,9 @@
 			<Option target="AbstarctVM"/>
 		</Unit>
 		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/src/Stack.cpp">
+			<Option target="AbstarctVM"/>
+		</Unit>
+		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/src/Token.cpp">
 			<Option target="AbstarctVM"/>
 		</Unit>
 		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/src/Utils.cpp">

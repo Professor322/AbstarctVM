@@ -1,0 +1,11 @@
+decision tree:
+
+                                        skip spaces(0)
+                                    is symbol a ';'  ?
+                            yes                                 no
+                    skip till the '\n'(1)                 parse instuction
+                                                                (0)
+                                                              is symbol ';'?
+                                                      yes                       no
+                                                      (1)                  parse argument
+                                                                                 (0)

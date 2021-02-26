@@ -55,10 +55,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -94,12 +94,12 @@ clean: CMakeFiles/AbstarctVM.dir/clean
 CMakeFiles/AbstarctVM.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target AbstarctVM"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target AbstarctVM"
 .PHONY : CMakeFiles/AbstarctVM.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AbstarctVM.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/AbstarctVM.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/professor/SchoolProjects/AbstarctVM/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/AbstarctVM.dir/rule

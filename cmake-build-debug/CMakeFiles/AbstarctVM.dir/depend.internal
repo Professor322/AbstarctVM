@@ -6,6 +6,7 @@ CMakeFiles/AbstarctVM.dir/src/Engine.cpp.o
  ../include/IOperand.h
  ../include/OperandDerived.h
  ../include/Stack.h
+ ../include/Token.h
  /home/professor/SchoolProjects/AbstarctVM/src/Engine.cpp
 CMakeFiles/AbstarctVM.dir/src/IOperand.cpp.o
  ../include/IOperand.h
@@ -20,6 +21,10 @@ CMakeFiles/AbstarctVM.dir/src/Stack.cpp.o
  ../include/OperandDerived.h
  ../include/Stack.h
  /home/professor/SchoolProjects/AbstarctVM/src/Stack.cpp
+CMakeFiles/AbstarctVM.dir/src/Token.cpp.o
+ ../include/IOperand.h
+ ../include/Token.h
+ /home/professor/SchoolProjects/AbstarctVM/src/Token.cpp
 CMakeFiles/AbstarctVM.dir/src/Utils.cpp.o
  ../include/IOperand.h
  ../include/OperandDerived.h
@@ -29,4 +34,5 @@ CMakeFiles/AbstarctVM.dir/src/main.cpp.o
  ../include/IOperand.h
  ../include/OperandDerived.h
  ../include/Stack.h
+ ../include/Token.h
  /home/professor/SchoolProjects/AbstarctVM/src/main.cpp

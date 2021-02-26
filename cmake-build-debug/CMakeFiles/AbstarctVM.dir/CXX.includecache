@@ -11,7 +11,9 @@ OperandDerived.h
 ../include/OperandDerived.h
 Stack.h
 ../include/Stack.h
-vector
+Token.h
+../include/Token.h
+list
 -
 unordered_map
 -
@@ -45,6 +47,12 @@ memory
 -
 stack
 -
+
+../include/Token.h
+unordered_map
+-
+IOperand.h
+../include/IOperand.h
 
 /home/professor/SchoolProjects/AbstarctVM/src/Engine.cpp
 Engine.h

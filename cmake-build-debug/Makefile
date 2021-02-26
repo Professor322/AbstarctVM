@@ -59,10 +59,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /home/professor/SchoolProjects/AbstarctVM/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/professor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -251,6 +251,33 @@ src/Stack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/Stack.cpp.s
 .PHONY : src/Stack.cpp.s
 
+src/Token.o: src/Token.cpp.o
+
+.PHONY : src/Token.o
+
+# target to build an object file
+src/Token.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/Token.cpp.o
+.PHONY : src/Token.cpp.o
+
+src/Token.i: src/Token.cpp.i
+
+.PHONY : src/Token.i
+
+# target to preprocess a source file
+src/Token.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/Token.cpp.i
+.PHONY : src/Token.cpp.i
+
+src/Token.s: src/Token.cpp.s
+
+.PHONY : src/Token.s
+
+# target to generate assembly for a file
+src/Token.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstarctVM.dir/build.make CMakeFiles/AbstarctVM.dir/src/Token.cpp.s
+.PHONY : src/Token.cpp.s
+
 src/Utils.o: src/Utils.cpp.o
 
 .PHONY : src/Utils.o
@@ -326,6 +353,9 @@ help:
 	@echo "... src/Stack.o"
 	@echo "... src/Stack.i"
 	@echo "... src/Stack.s"
+	@echo "... src/Token.o"
+	@echo "... src/Token.i"
+	@echo "... src/Token.s"
 	@echo "... src/Utils.o"
 	@echo "... src/Utils.i"
 	@echo "... src/Utils.s"

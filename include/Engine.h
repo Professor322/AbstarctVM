@@ -5,6 +5,7 @@
 #ifndef ABSTARCTVM_ENGINE_H
 #define ABSTARCTVM_ENGINE_H
 
+
 #include "OperandDerived.h"
 #include "Stack.h"
 #include "Token.h"
@@ -15,15 +16,16 @@
 
 
 class Engine {
-	std::list<std::unique_ptr<Token>> tokens;
+	std::list<std::shared_ptr<Token>> tokens;
+	Stack stack;
+	OperandCreator oc;
 
-	std::unique_ptr<Token> getToken(std::istream& it);
+	std::shared_ptr<Token> getToken(std::istream& it);
+	auto createOperand(Token *typeToken, Token *valueToken);
 public:
-	std::list<std::unique_ptr<Token>> Tokenize(std::istream& it);
-
-	void Run() {
-
-	}
+	std::list<std::shared_ptr<Token>> Tokenize(std::istream& it);
+	void checkGrammar();
+	void Execute();
 };
 
 

@@ -35,7 +35,7 @@ enum class eInsns {
 class Token {
 	eTokens token;
 public:
-	[[nodiscard]] eTokens getToken() const { return token; }
+	[[nodiscard]] eTokens getBaseToken() const { return token; }
 
 	Token(eTokens token) : token(token) {}
 };
@@ -46,6 +46,7 @@ class InsnToken : public Token {
 	static const std::unordered_map<std::string_view, std::pair<int, eInsns>> insns;
 public:
 	InsnToken(eTokens token, std::string StrInsn);
+	[[nodiscard]] eInsns getInsn() const { return insn; }
 };
 
 class TypeToken : public Token {
@@ -54,6 +55,7 @@ class TypeToken : public Token {
 	static const std::unordered_map<std::string_view, eOperandType> types;
 public:
 	TypeToken(eTokens token, std::string StrInsn);
+	[[nodiscard]] eOperandType getValueType() const { return type; }
 
 };
 
@@ -61,12 +63,13 @@ class ValueToken : public Token {
 	std::string StrValue;
 public:
 	ValueToken(eTokens token, std::string StrValue) : Token(token), StrValue(std::move(StrValue)) {}
+	std::string getStrValue() const { return StrValue;}
 };
 
-class BasicToken : public Token {
+class SymbolToken : public Token {
 	char BasicChar;
 public:
-	BasicToken(eTokens token, char BasicChar) : Token(token), BasicChar(BasicChar) {}
-	BasicToken(eTokens token) : Token(token) {}
+	SymbolToken(eTokens token, char BasicChar) : Token(token), BasicChar(BasicChar) {}
+	SymbolToken(eTokens token) : Token(token) {}
 };
 #endif //ABSTARCTVM_TOKEN_H
