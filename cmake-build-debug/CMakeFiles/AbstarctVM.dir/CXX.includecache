@@ -58,3 +58,15 @@ IOperand.h
 Engine.h
 /home/professor/SchoolProjects/AbstarctVM/src/Engine.h
 
+/home/professor/SchoolProjects/AbstarctVM/src/Stack.cpp
+Stack.h
+/home/professor/SchoolProjects/AbstarctVM/src/Stack.h
+
+/home/professor/SchoolProjects/AbstarctVM/src/main.cpp
+IOperand.h
+/home/professor/SchoolProjects/AbstarctVM/src/IOperand.h
+Engine.h
+/home/professor/SchoolProjects/AbstarctVM/src/Engine.h
+iostream
+-
+

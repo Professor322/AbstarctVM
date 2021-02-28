@@ -4,7 +4,7 @@
 
 #include "Token.h"
 
-const std::unordered_map<std::string_view, std::pair<int, eInsns>> InsnToken::insns =  {
+const std::unordered_map<std::string, std::pair<int, eInsns>> InsnToken::insns =  {
 	{"add", {0 ,eInsns::ADD} },
 	{"sub", {0, eInsns::SUB} },
 	{"mul", {0, eInsns::MUL} },
@@ -15,9 +15,10 @@ const std::unordered_map<std::string_view, std::pair<int, eInsns>> InsnToken::in
 	{"dump", {0, eInsns::DUMP} },
 	{"print", {0, eInsns::PRINT} },
 	{"assert", {1, eInsns::ASSERT} },
+	{"exit", {0, eInsns::EXIT} },
 };
 
-const std::unordered_map<std::string_view, eOperandType> TypeToken::types = {
+const std::unordered_map<std::string, eOperandType> TypeToken::types = {
 	{"int8", eOperandType::Int8},
 	{"int16", eOperandType::Int16},
 	{"int32", eOperandType::Int32},
@@ -26,7 +27,7 @@ const std::unordered_map<std::string_view, eOperandType> TypeToken::types = {
 };
 
 InsnToken::InsnToken(eTokens token, std::string StrInsn) : Token(token), StrInsn(std::move(StrInsn)) {
-	const auto it = insns.find(StrInsn);
+	const auto it = insns.find(this->StrInsn);
 
 	if (it != insns.end()) {
 		///value->eInsn
@@ -35,7 +36,7 @@ InsnToken::InsnToken(eTokens token, std::string StrInsn) : Token(token), StrInsn
 }
 
 TypeToken::TypeToken(eTokens token, std::string StrType) : Token(token), StrType(std::move(StrType)) {
-	const auto it = types.find(StrType);
+	const auto it = types.find(this->StrType);
 
 	if (it != types.end()) {
 		///eTypes

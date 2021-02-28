@@ -23,6 +23,7 @@ public:
 	void Dump();
 	void Print();
 	void Assert(std::shared_ptr<const IOperand> op);
+	void Exit();
 };
 
 

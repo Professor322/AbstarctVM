@@ -30,32 +30,36 @@ enum class eInsns {
 	DUMP,
 	PRINT,
 	ASSERT,
+	EXIT
 };
 
 class Token {
 	eTokens token;
 public:
 	[[nodiscard]] eTokens getBaseToken() const { return token; }
-
+	[[nodiscard]] virtual unsigned int getSpecificToken() const { return -1; }
+	[[nodiscard]] virtual std::string getStrValue() const = 0;
 	Token(eTokens token) : token(token) {}
 };
 
 class InsnToken : public Token {
 	eInsns insn;
 	const std::string StrInsn;
-	static const std::unordered_map<std::string_view, std::pair<int, eInsns>> insns;
+	static const std::unordered_map<std::string, std::pair<int, eInsns>> insns;
 public:
 	InsnToken(eTokens token, std::string StrInsn);
-	[[nodiscard]] eInsns getInsn() const { return insn; }
+	[[nodiscard]] unsigned int getSpecificToken() const override { return static_cast<int>(insn); }
+	[[nodiscard]] std::string getStrValue() const override { return StrInsn; }
 };
 
 class TypeToken : public Token {
 	eOperandType type;
 	std::string StrType;
-	static const std::unordered_map<std::string_view, eOperandType> types;
+	static const std::unordered_map<std::string, eOperandType> types;
 public:
 	TypeToken(eTokens token, std::string StrInsn);
-	[[nodiscard]] eOperandType getValueType() const { return type; }
+	[[nodiscard]] unsigned int getSpecificToken() const override {return static_cast<int>(type);}
+	[[nodiscard]] std::string getStrValue() const override { return StrType; }
 
 };
 
@@ -63,7 +67,8 @@ class ValueToken : public Token {
 	std::string StrValue;
 public:
 	ValueToken(eTokens token, std::string StrValue) : Token(token), StrValue(std::move(StrValue)) {}
-	std::string getStrValue() const { return StrValue;}
+	[[nodiscard]] std::string getStrValue() const override { return StrValue; }
+
 };
 
 class SymbolToken : public Token {
@@ -71,5 +76,7 @@ class SymbolToken : public Token {
 public:
 	SymbolToken(eTokens token, char BasicChar) : Token(token), BasicChar(BasicChar) {}
 	SymbolToken(eTokens token) : Token(token) {}
+	[[nodiscard]] std::string getStrValue() const override { return std::string{BasicChar}; }
+
 };
 #endif //ABSTARCTVM_TOKEN_H

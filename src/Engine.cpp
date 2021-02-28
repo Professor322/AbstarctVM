@@ -23,10 +23,12 @@ std::shared_ptr<Token> Engine::getToken(std::istream& fs) {
 		fs.get(LastChar);
 		return std::make_shared<SymbolToken>(eTokens::NEW_LINE);
 	}
+
 	if (LastChar == '(') {
 		fs.get(LastChar);
 		return std::make_shared<SymbolToken>(eTokens::OPEN_BRACKET);
 	}
+
 	if (isdigit(LastChar)) {
 		std::string Value;
 		while (!fs.eof() && isdigit(LastChar) || LastChar == '.') {
@@ -72,7 +74,7 @@ std::list<std::shared_ptr<Token>> Engine::Tokenize(std::istream &it) {
 
 void Engine::checkGrammar() {
 
-	tokens.remove_if([](const std::shared_ptr<Token>& token) {
+	tokens.remove_if([](const std::shared_ptr<Token> token) {
 		return token->getBaseToken() == eTokens::CLOSE_BRACKET ||
 				token->getBaseToken() == eTokens::OPEN_BRACKET ||
 				token->getBaseToken() == eTokens::NEW_LINE ||
@@ -86,9 +88,8 @@ void Engine::checkGrammar() {
 }
 
 auto Engine::createOperand(Token *typeToken, Token *valueToken)   {
-	eOperandType type = static_cast<TypeToken*>(typeToken)->getValueType();
-	std::string value = static_cast<ValueToken*>(valueToken)->getStrValue();
-
+	auto type = static_cast<eOperandType>(typeToken->getSpecificToken());
+	auto value = valueToken->getStrValue();
 	return std::shared_ptr<const IOperand>{oc.createOperand(type, value)};
 }
 
@@ -97,8 +98,8 @@ void Engine::Execute() {
 
 	while (it != tokens.end()) {
 		///tokens should start with insn
-		auto *token = static_cast<InsnToken *>(it->get());
-		switch(token->getInsn()) {
+		auto insn = static_cast<eInsns>(it->get()->getSpecificToken());
+		switch(insn) {
 			case eInsns::ADD:
 				stack.Add();
 				break;
@@ -123,12 +124,21 @@ void Engine::Execute() {
 			case eInsns::PRINT:
 				stack.Print();
 				break;
-			case eInsns::PUSH:
-				stack.Push(createOperand((++it)->get(), (++it)->get()));
+			case eInsns::EXIT:
+				stack.Exit();
 				break;
-			case eInsns::ASSERT:
-				stack.Assert(createOperand((++it)->get(), (++it)->get()));
+			case eInsns::PUSH: {
+				auto type = (++it)->get();
+				auto value = (++it)->get();
+				stack.Push(createOperand(type, value));
 				break;
+			}
+			case eInsns::ASSERT: {
+				auto type = (++it)->get();
+				auto value = (++it)->get();
+				stack.Assert(createOperand(type, value));
+				break;
+			}
 		}
 		it++;
 

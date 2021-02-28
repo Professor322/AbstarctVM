@@ -33,3 +33,5 @@ void Stack::Push(std::shared_ptr<const IOperand> op)
 
 void Stack::Sub()
 {}
+
+void Stack::Exit() {}
