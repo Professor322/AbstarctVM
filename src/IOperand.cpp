@@ -25,6 +25,8 @@ const IOperand * OperandCreator::createDouble(const std::string &value) const {
     return new Operand(value, eOperandType::Double);
 }
 
+
+//todo overlook this because for every funciton call we create a new OperandCreator, this is not right
 IOperand const * OperandCreator::createOperand(eOperandType type, std::string const &value) const {
     static std::array<std::function<IOperand const *(const OperandCreator&, std::string const&)>, OPERAND_TYPES_NUM> mainCreator = {
             &OperandCreator::createInt8,

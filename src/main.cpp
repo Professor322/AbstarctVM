@@ -13,5 +13,6 @@ int main(int argc, char** argv) {
 	e.checkGrammar();
 	e.Execute();
 
+	f.close();
 	return 0;
 }

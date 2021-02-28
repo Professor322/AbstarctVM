@@ -33,6 +33,9 @@ enum class eInsns {
 	EXIT
 };
 
+//todo make a template of the class Token it should simplify readability
+//todo check for copies creations
+
 class Token {
 	eTokens token;
 public:
@@ -45,6 +48,7 @@ public:
 class InsnToken : public Token {
 	eInsns insn;
 	const std::string StrInsn;
+	//todo maybe std::string_view??
 	static const std::unordered_map<std::string, std::pair<int, eInsns>> insns;
 public:
 	InsnToken(eTokens token, std::string StrInsn);
@@ -55,6 +59,7 @@ public:
 class TypeToken : public Token {
 	eOperandType type;
 	std::string StrType;
+	//todo maybe std::string_view??
 	static const std::unordered_map<std::string, eOperandType> types;
 public:
 	TypeToken(eTokens token, std::string StrInsn);

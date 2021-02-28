@@ -3,7 +3,7 @@
 //
 
 #include "Engine.h"
-
+//todo add looking for ';;' from input
 std::shared_ptr<Token> Engine::getToken(std::istream& fs) {
 	static char LastChar = ' ';
 
@@ -74,6 +74,9 @@ std::list<std::shared_ptr<Token>> Engine::Tokenize(std::istream &it) {
 
 void Engine::checkGrammar() {
 
+	//todo brackets check
+	//todo insns per line check
+	//todo arg num in instruction check
 	tokens.remove_if([](const std::shared_ptr<Token> token) {
 		return token->getBaseToken() == eTokens::CLOSE_BRACKET ||
 				token->getBaseToken() == eTokens::OPEN_BRACKET ||
@@ -83,9 +86,9 @@ void Engine::checkGrammar() {
 
 	});
 
-	///check parenthess delete paranthes
-	///check number of instruction per line //delete newlines
 }
+
+///todo will be eliminated perhaps
 
 auto Engine::createOperand(Token *typeToken, Token *valueToken)   {
 	auto type = static_cast<eOperandType>(typeToken->getSpecificToken());
@@ -93,6 +96,7 @@ auto Engine::createOperand(Token *typeToken, Token *valueToken)   {
 	return std::shared_ptr<const IOperand>{oc.createOperand(type, value)};
 }
 
+///todo think of the ways hot to eliminate this crazy switch case, maybe it is not necessary
 void Engine::Execute() {
 	auto it = tokens.begin();
 
@@ -100,6 +104,7 @@ void Engine::Execute() {
 		///tokens should start with insn
 		auto insn = static_cast<eInsns>(it->get()->getSpecificToken());
 		switch(insn) {
+			///todo maybe create an array of function pointers in Stack class to call an insn
 			case eInsns::ADD:
 				stack.Add();
 				break;
