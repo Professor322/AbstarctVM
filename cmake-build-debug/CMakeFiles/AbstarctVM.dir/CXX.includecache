@@ -45,7 +45,7 @@ OperandDerived.h
 -
 memory
 -
-stack
+list
 -
 
 ../include/Token.h
@@ -57,10 +57,6 @@ IOperand.h
 /home/professor/SchoolProjects/AbstarctVM/src/Engine.cpp
 Engine.h
 /home/professor/SchoolProjects/AbstarctVM/src/Engine.h
-
-/home/professor/SchoolProjects/AbstarctVM/src/Stack.cpp
-Stack.h
-/home/professor/SchoolProjects/AbstarctVM/src/Stack.h
 
 /home/professor/SchoolProjects/AbstarctVM/src/main.cpp
 IOperand.h

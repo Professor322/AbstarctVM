@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
 	Engine e;
 	std::fstream f(argv[1]);
 
-	e.Tokenize(f);
+	e.Tokenize(std::cin);
 	e.checkGrammar();
 	e.Execute();
 

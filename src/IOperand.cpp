@@ -28,14 +28,14 @@ const IOperand * OperandCreator::createDouble(const std::string &value) const {
 
 //todo overlook this because for every funciton call we create a new OperandCreator, this is not right
 IOperand const * OperandCreator::createOperand(eOperandType type, std::string const &value) const {
-    static std::array<std::function<IOperand const *(const OperandCreator&, std::string const&)>, OPERAND_TYPES_NUM> mainCreator = {
-            &OperandCreator::createInt8,
-            &OperandCreator::createInt16,
-            &OperandCreator::createInt32,
-            &OperandCreator::createFloat,
-            &OperandCreator::createDouble
+    static std::array<std::function<IOperand const *(std::string const&)>, OPERAND_TYPES_NUM> mainCreator = {
+            std::bind(&OperandCreator::createInt8, this, std::placeholders::_1),
+			std::bind(&OperandCreator::createInt16, this, std::placeholders::_1),
+			std::bind(&OperandCreator::createInt32, this, std::placeholders::_1),
+			std::bind(&OperandCreator::createFloat, this, std::placeholders::_1),
+			std::bind(&OperandCreator::createDouble, this, std::placeholders::_1),
     };
 
-    return mainCreator[static_cast<int>(type)](OperandCreator(), value);
+    return mainCreator[static_cast<size_t>(type)](value);
 }
 

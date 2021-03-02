@@ -7,11 +7,12 @@
 
 #include <OperandDerived.h>
 #include <memory>
-#include <stack>
+#include <list>
 
 class Stack {
 private:
-	std::stack<std::shared_ptr<const IOperand>> st;
+	std::list<std::shared_ptr<const IOperand>> list;
+	std::pair<std::shared_ptr<const IOperand>, std::shared_ptr<const IOperand>> PrepareOperands();
 public:
 	void Add();
 	void Sub();

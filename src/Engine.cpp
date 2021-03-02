@@ -14,6 +14,8 @@ std::shared_ptr<Token> Engine::getToken(std::istream& fs) {
 	while (!fs.eof() && isspace(LastChar) && LastChar != '\n')
 		fs.get(LastChar);
 	if (LastChar == ';') {
+		if (fs.peek() == ';')
+			return std::make_shared<SymbolToken>(eTokens::END);
 		while (!fs.eof() && LastChar != '\n')
 			fs.get(LastChar);
 		return getToken(fs.get(LastChar));
