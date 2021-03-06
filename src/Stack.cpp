@@ -13,17 +13,22 @@ std::pair<std::shared_ptr<const IOperand>, std::shared_ptr<const IOperand>> Stac
 void Stack::Add()
 {
 	auto [op1, op2] = PrepareOperands();
-
-	list.push_front(std::shared_ptr<const IOperand>{*op1.get() + *op2.get()});
+	list.push_front(std::shared_ptr<const IOperand>{*op1 + *op2});
 }
 
 void Stack::Assert(std::shared_ptr<const IOperand> op)
-{}
+{
+	auto top = list.front();
+	if (*top == *op) {
+		return ;
+	}
+	std::cout << "Error\n";
+}
 
 void Stack::Div()
 {
 	auto [op1, op2] = PrepareOperands();
-	list.push_front(std::shared_ptr<const IOperand>{*op1.get() / *op2.get()});
+	list.push_front(std::shared_ptr<const IOperand>{*op1 / *op2});
 }
 
 void Stack::Dump()
@@ -35,16 +40,14 @@ void Stack::Dump()
 
 void Stack::Mod()
 {
-
 	auto [op1, op2] = PrepareOperands();
-
-	list.push_front(std::shared_ptr<const IOperand>{*op1.get() % *op2.get()});
+	list.push_front(std::shared_ptr<const IOperand>{*op1 % *op2});
 }
 
 void Stack::Mul()
 {
 	auto [op1, op2] = PrepareOperands();
-	list.push_front(std::shared_ptr<const IOperand>{*op1.get() * *op2.get()});
+	list.push_front(std::shared_ptr<const IOperand>{*op1 * *op2});
 }
 
 void Stack::Pop()
@@ -64,13 +67,10 @@ void Stack::Push(std::shared_ptr<const IOperand> op)
 
 void Stack::Sub()
 {
-
 	auto [op1, op2] = PrepareOperands();
-
-	list.push_front(std::shared_ptr<const IOperand>{*op1.get() - *op2.get()});
+	list.push_front(std::shared_ptr<const IOperand>{*op1 - *op2});
 }
 
 void Stack::Exit() {
-
 	exit(0);
 }

@@ -12,6 +12,9 @@
 #include <variant>
 #include <tuple>
 #include <cmath>
+#include <iostream>
+#include <sstream>
+#include <iomanip>
 
 enum class eOperandType {
     Int8,
@@ -30,6 +33,7 @@ public:
     virtual IOperand const * operator*( IOperand const & rhs ) const = 0; // Product
     virtual IOperand const * operator/( IOperand const & rhs ) const = 0; // Quotient
     virtual IOperand const * operator%( IOperand const & rhs ) const = 0; // Modulo
+	virtual bool operator==(const IOperand &rhs) const = 0;
     [[nodiscard]] virtual std::string const & toString() const = 0; // String representation of the instance
     virtual ~IOperand() {}
 };
@@ -46,6 +50,7 @@ private:
 public:
     OperandCreator() = default;
     [[nodiscard]] IOperand const * createOperand( eOperandType type, std::string const & value ) const;
+  //  ~OperandCreator() { std::cout << "Destroying the OC\n"; }
 };
 
 

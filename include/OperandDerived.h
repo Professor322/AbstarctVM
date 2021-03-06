@@ -16,7 +16,8 @@ private:
 	const std::string Value;
 	const eOperandType type;
 	OperandCreator oc;
-
+	constexpr static float F_EPSILON = 0.00000001f;
+	constexpr static double D_EPSILON = 0.00000001f;
 
 	[[nodiscard]] std::tuple<eOperandType, Types, Types> ops_for_arith(IOperand const &rhs) const;
 public:
@@ -32,6 +33,7 @@ public:
 	IOperand const *operator*(IOperand const &rhs) const override; // Product
 	IOperand const *operator/(IOperand const &rhs) const override; // Quotient
 	IOperand const *operator%(IOperand const &rhs) const override; // Modulo
+	bool operator==(IOperand const &rhs) const override; 		   // Equality
 
 };
 

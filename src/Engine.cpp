@@ -79,6 +79,7 @@ void Engine::checkGrammar() {
 	//todo brackets check
 	//todo insns per line check
 	//todo arg num in instruction check
+	//todo exit intruction at the end
 	tokens.remove_if([](const std::shared_ptr<Token> token) {
 		return token->getBaseToken() == eTokens::CLOSE_BRACKET ||
 				token->getBaseToken() == eTokens::OPEN_BRACKET ||
