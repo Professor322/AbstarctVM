@@ -87,6 +87,9 @@
 		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/include/Engine.h">
 			<Option target="AbstarctVM"/>
 		</Unit>
+		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/include/ErrorHandler.h">
+			<Option target="AbstarctVM"/>
+		</Unit>
 		<Unit filename="/home/professor/SchoolProjects/AbstarctVM/include/Stack.h">
 			<Option target="AbstarctVM"/>
 		</Unit>

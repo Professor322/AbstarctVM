@@ -19,6 +19,20 @@ unordered_map
 -
 fstream
 -
+stack
+-
+ErrorHandler.h
+../include/ErrorHandler.h
+
+../include/ErrorHandler.h
+exception
+-
+string
+-
+iostream
+-
+sstream
+-
 
 ../include/IOperand.h
 string
@@ -40,6 +54,8 @@ iostream
 sstream
 -
 iomanip
+-
+exception
 -
 
 ../include/OperandDerived.h
@@ -63,36 +79,4 @@ IOperand.h
 /home/professor/SchoolProjects/AbstarctVM/src/Engine.cpp
 Engine.h
 /home/professor/SchoolProjects/AbstarctVM/src/Engine.h
-
-/home/professor/SchoolProjects/AbstarctVM/src/IOperand.cpp
-IOperand.h
-/home/professor/SchoolProjects/AbstarctVM/src/IOperand.h
-OperandDerived.h
-/home/professor/SchoolProjects/AbstarctVM/src/OperandDerived.h
-
-/home/professor/SchoolProjects/AbstarctVM/src/OperandDerived.cpp
-OperandDerived.h
-/home/professor/SchoolProjects/AbstarctVM/src/OperandDerived.h
-
-/home/professor/SchoolProjects/AbstarctVM/src/Stack.cpp
-Stack.h
-/home/professor/SchoolProjects/AbstarctVM/src/Stack.h
-iostream
--
-
-/home/professor/SchoolProjects/AbstarctVM/src/Token.cpp
-Token.h
-/home/professor/SchoolProjects/AbstarctVM/src/Token.h
-
-/home/professor/SchoolProjects/AbstarctVM/src/Utils.cpp
-OperandDerived.h
-/home/professor/SchoolProjects/AbstarctVM/src/OperandDerived.h
-
-/home/professor/SchoolProjects/AbstarctVM/src/main.cpp
-IOperand.h
-/home/professor/SchoolProjects/AbstarctVM/src/IOperand.h
-Engine.h
-/home/professor/SchoolProjects/AbstarctVM/src/Engine.h
-iostream
--
 

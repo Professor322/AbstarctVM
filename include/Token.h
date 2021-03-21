@@ -30,7 +30,8 @@ enum class eInsns {
 	DUMP,
 	PRINT,
 	ASSERT,
-	EXIT
+	EXIT,
+	UNKNOWN_INSN
 };
 
 
@@ -47,7 +48,7 @@ class InsnToken : public Token {
 	eInsns insn;
 	const std::string StrInsn;
 	//todo maybe std::string_view??
-	static const std::unordered_map<std::string_view, std::pair<int, eInsns>> insns;
+	static const std::unordered_map<std::string_view, std::pair<size_t, eInsns>> insns;
 public:
 	InsnToken(eTokens token, std::string StrInsn);
 	[[nodiscard]] unsigned int getSpecificToken() const override { return static_cast<int>(insn); }
@@ -76,10 +77,14 @@ public:
 
 class SymbolToken : public Token {
 	char BasicChar;
+	std::string Identifier;
 public:
 	SymbolToken(eTokens token, char BasicChar) : Token(token), BasicChar(BasicChar) {}
+	SymbolToken(eTokens token, const std::string& BasicChar) : Token(token), Identifier(BasicChar) {}
 	SymbolToken(eTokens token) : Token(token) {}
-	[[nodiscard]] std::string getStrValue() const override { return std::string{BasicChar}; }
+	[[nodiscard]] std::string getStrValue() const override {
+		return Identifier.empty() ? std::string{BasicChar} : Identifier;
+	}
 
 };
 #endif //ABSTARCTVM_TOKEN_H

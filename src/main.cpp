@@ -10,7 +10,12 @@ int main(int argc, char** argv) {
 	std::fstream f(argv[1]);
 
 	e.Tokenize(f);
-	e.checkGrammar();
+	try {
+		e.checkGrammar();
+	} catch (std::exception& e) {
+		std::cerr << e.what() << '\n';
+		return -1;
+	}
 	e.Execute();
 
 	f.close();

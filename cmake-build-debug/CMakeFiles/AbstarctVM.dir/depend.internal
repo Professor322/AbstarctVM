@@ -3,6 +3,7 @@
 
 CMakeFiles/AbstarctVM.dir/src/Engine.cpp.o
  ../include/Engine.h
+ ../include/ErrorHandler.h
  ../include/IOperand.h
  ../include/OperandDerived.h
  ../include/Stack.h
@@ -31,6 +32,7 @@ CMakeFiles/AbstarctVM.dir/src/Utils.cpp.o
  /home/professor/SchoolProjects/AbstarctVM/src/Utils.cpp
 CMakeFiles/AbstarctVM.dir/src/main.cpp.o
  ../include/Engine.h
+ ../include/ErrorHandler.h
  ../include/IOperand.h
  ../include/OperandDerived.h
  ../include/Stack.h
